@@ -1,0 +1,36 @@
+DPLL =>  Quine + nomo-litteral
+
+heuristiques
+	-> First satisfay
+	-> First fail
+	
+Options
+	-> 1 solution  / Toutes solutions
+	-> (choix de l'heuristique)
+	-> help
+	
+Probleme à tester  (Faire un générateur)
+	-> pigeon (n)
+	-> dame (n)
+	-> Ramsey
+	-> SAT-3
+	
+Autres
+	-> Afficher le temps d'execution
+	-> Afficher le nombre de noeud de DPLL
+	-> Lecture / Ecriture dans un fichier
+			|=> format
+			|
+			| un litteral v -> p (nb impair)  => -v -> p+1 (nb pair)
+			| si A -> 1   =>   -A -> 2
+		
+			
+Structure de donnée
+
+	|> clause -> litteraux  (liste chainée)
+	|> litteral -> clause   (liste des clause où il apparait)
+	|> etat des clauses 	(0 -> non satisfaite  /  1 -> satisfaite)
+	|> longueur clause		(taille des clauses)
+	|> etat des variables	(0 -> pas affecté  / 1 -> affecté 1 fois
+								2 -> affecté 2 fois)
+	|> interpretation		(pile pour le BT)
